@@ -1,5 +1,5 @@
-const User = require("../models/User");
-const Admin = require("../models/Admin");
+const User = require("../Models/User");
+const Admin = require("../Models/Admin");
 const bcrypt = require("bcryptjs");
 const generateToken = require("../utils/generateToken");
 
@@ -130,16 +130,12 @@ const registerAdmin = async (req, res) => {
 const loginAdmin = async (req, res) => {
   try {
     const { email, password } = req.body;
-    console.log("Admin login attempt:", { email });
-    console.log("Request body:", req.body);
 
     // Pehle admin ko find karo with password
     const admin = await Admin.findOne({ email }).select("+password");
-    console.log("Found admin:", admin ? "Yes" : "No");
 
     // Agar admin nahi mila to error return karo
     if (!admin) {
-      console.log("❌ Admin not found with email:", email);
       return res.status(401).json({ message: "Invalid credentials" });
     }
 
