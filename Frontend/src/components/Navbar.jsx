@@ -15,7 +15,9 @@ export default function Navbar() {
           <div className="h-9 w-9 rounded-lg bg-gradient-to-br from-fuchsia-500 to-indigo-500 flex items-center justify-center shadow-lg">
             <Briefcase className="h-5 w-5 text-white" />
           </div>
-          <span className="text-lg font-bold gradient-text">JobPortal</span>
+          <span className="text-lg font-bold gradient-text">
+            PlacementEmpire
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-6">

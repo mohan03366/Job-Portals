@@ -24,7 +24,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              Land your dream job with a portal that feels like magic
+              Land your dream job with a PlacementEmpire that feels like magic
             </h1>
             <p className="text-white/80 mt-4 text-lg">
               Explore curated roles, apply in seconds, and keep everything
