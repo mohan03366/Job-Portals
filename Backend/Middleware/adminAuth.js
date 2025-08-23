@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const Admin = require("../models/Admin");
+const Admin = require("../Models/Admin");
 
 const adminAuth = async (req, res, next) => {
   const token = req.cookies.token || req.headers.authorization?.split(" ")[1];

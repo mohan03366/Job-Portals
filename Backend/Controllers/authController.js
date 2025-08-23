@@ -1,7 +1,7 @@
 const User = require("../Models/User");
 const Admin = require("../Models/Admin");
 const bcrypt = require("bcryptjs");
-const generateToken = require("../utils/generateToken");
+const generateToken = require("../Utils/generateToken");
 
 // @desc    Register a new user
 // @route   POST /api/auth/user/signup
