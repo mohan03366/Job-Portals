@@ -36,7 +36,7 @@ const Jobs = () => {
         setLoading(true);
 
         // For cookie-based authentication, we include credentials
-        const response = await fetch("http://localhost:4000/api/jobs/getjobs", {
+        const response = await fetch("https://job-portals-2-j5ez.onrender.com/api/jobs/getjobs", {
           method: "GET",
           credentials: "include", // This ensures cookies are sent with the request
         });
