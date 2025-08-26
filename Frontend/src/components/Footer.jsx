@@ -49,7 +49,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Follow Us</h3>
             <div className="flex justify-center md:justify-end space-x-4">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/share/172opymYSu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-blue-400 transition-colors"
@@ -69,7 +69,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/empireofplacement?igsh=MXJxbTU3ODRhaGo2cw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-pink-500 transition-colors"
@@ -109,7 +109,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://www.youtube.com"
+                href="https://youtu.be/jHtfR4E9MhM?si=BQmzhdd12aJgNIRT"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-red-500 transition-colors"
