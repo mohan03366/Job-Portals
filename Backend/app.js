@@ -13,7 +13,7 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // ya aapke frontend ka URL
+    origin: "https://job-portals-3.onrender.com", // ya aapke frontend ka URL
     credentials: true,
   })
 );
