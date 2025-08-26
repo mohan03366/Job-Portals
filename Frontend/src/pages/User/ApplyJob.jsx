@@ -163,7 +163,7 @@ const ApplyJob = () => {
 
       console.log("Submitting application with data:", formData);
       const response = await fetch(
-        "http://localhost:4000/api/applications/apply",
+        "https://job-portals-2-j5ez.onrender.com/api/applications/apply",
         {
           method: "POST",
           credentials: "include",
