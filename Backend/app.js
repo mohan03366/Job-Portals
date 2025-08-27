@@ -13,12 +13,18 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: "https://job-portals-4.onrender.com", // your frontend Render URL
+    origin: [
+      "http://localhost:5173",          // for local frontend testing
+      "https://job-portals-3.onrender.com" // your deployed frontend
+    ],
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"], // allow CRUD + PATCH + OPTIONS
-    allowedHeaders: ["Content-Type", "Authorization"], // allow headers for JSON & JWT
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
+app.options("*", cors()); // allow preflight requests
+
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
