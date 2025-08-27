@@ -29,7 +29,7 @@ const registerUser = async (req, res) => {
       res.cookie("token", generateToken(user._id), {
         httpOnly: true, // Block JavaScript access
         secure: process.env.NODE_ENV === "production", // HTTPS-only in production
-        sameSite: "strict", // Prevent CSRF
+        sameSite: "none", // Prevent CSRF
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days expiry
       });
 
@@ -62,7 +62,7 @@ const loginUser = async (req, res) => {
       res.cookie("token", generateToken(user._id), {
         httpOnly: true, // Block JavaScript access
         secure: process.env.NODE_ENV === "production", // HTTPS-only in production
-        sameSite: "strict", // Prevent CSRF
+        sameSite: "none", // Prevent CSRF
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days expiry
       });
 
@@ -102,7 +102,7 @@ const registerAdmin = async (req, res) => {
       res.cookie("token", generateToken(admin._id), {
         httpOnly: true, // Block JavaScript access
         secure: process.env.NODE_ENV === "production", // HTTPS-only in production
-        sameSite: "strict", // Prevent CSRF
+        sameSite: "none", // Prevent CSRF
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days expiry
       });
 
@@ -148,7 +148,7 @@ const loginAdmin = async (req, res) => {
       res.cookie("token", generateToken(admin._id), {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "strict",
+        sameSite: "none",
         maxAge: 30 * 24 * 60 * 60 * 1000,
       });
 
