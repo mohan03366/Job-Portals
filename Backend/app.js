@@ -13,7 +13,7 @@ connectDB();
 // Middleware
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://job-portals-3.onrender.com",
+  "https://job-portals-4.onrender.com",
 ];
 
 app.use(
