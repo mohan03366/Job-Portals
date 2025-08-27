@@ -11,17 +11,24 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://job-portals-3.onrender.com",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",          // for local frontend testing
-      "https://job-portals-3.onrender.com" // your deployed frontend
-    ],
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 app.options("*", cors()); // allow preflight requests
 
