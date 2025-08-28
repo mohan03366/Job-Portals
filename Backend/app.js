@@ -10,12 +10,6 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-// Middleware
-import cors from "cors";
-import express from "express";
-
-//const app = express();
-
 const allowedOrigins = [
   "http://localhost:5173",
   "https://job-portals-4.onrender.com",
