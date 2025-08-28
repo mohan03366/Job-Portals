@@ -11,26 +11,29 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware
+import cors from "cors";
+import express from "express";
+
+//const app = express();
+
 const allowedOrigins = [
   "http://localhost:5173",
   "https://job-portals-4.onrender.com",
-  
 ];
 
 app.use(
   cors({
     origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, or Postman)
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
       }
     },
-    credentials: true,
+    credentials: true, // allows cookies/auth headers
   })
 );
-
-
 
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));

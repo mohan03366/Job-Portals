@@ -35,24 +35,34 @@ const Jobs = () => {
       try {
         setLoading(true);
 
-        // For cookie-based authentication, we include credentials
-        const response = await fetch("https://job-portals-2-j5ez.onrender.com/api/jobs/getjobs", {
-          method: "GET",
-          credentials: "include", // This ensures cookies are sent with the request
-        });
+        const response = await fetch(
+          "https://job-portals-2-j5ez.onrender.com/api/jobs/getjobs",
+          {
+            method: "GET",
+            credentials: "include", // send cookies (important for auth)
+            headers: {
+              "Content-Type": "application/json", // ensures proper handling
+            },
+          }
+        );
 
         if (!response.ok) {
-          // If we get a 401, it might mean the user needs to log in
           if (response.status === 401) {
             throw new Error("Please log in to view job listings");
           }
-          throw new Error(`HTTP error! status: ${response.status}`);
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
         const data = await response.json();
+
+        // Ensure data is an array (extra safety)
+        if (!Array.isArray(data)) {
+          throw new Error("Invalid data format received from server");
+        }
+
         setJobs(data);
       } catch (err) {
-        setError(err.message);
+        setError(err.message || "Something went wrong");
         console.error("Error fetching jobs:", err);
       } finally {
         setLoading(false);
