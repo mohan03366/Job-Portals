@@ -24,7 +24,7 @@ export function AuthProvider({ children }) {
   const logout = useCallback(async () => {
     try {
       // Call the logout API endpoint to clear the cookie
-      await fetch(`${env("VITE_API_AUTH_BASE_URL", "")}/logout`, {
+      await fetch(`https://job-portals-2-j5ez.onrender.com/logout`, {
         method: "POST",
         credentials: "include",
       });
